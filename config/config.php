@@ -7,7 +7,10 @@ if(file_exists(__DIR__ . '/../env.json')){
 if(
     (!isset($env['ID'])) || (!isset($env['NAME']))
 ){
-    echo 'ENV:ID and ENV:NAME missing.';
+    echo 'ENV:ID and ENV:NAME missing.' . "\n";
+
+    print_r($_SERVER);
+
     exit();
     die();
 }
