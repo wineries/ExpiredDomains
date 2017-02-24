@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "post-update-cmd": [
+            "bower install"
+        ]
+    },
+    "require": {
+        "gears/router": "^0.6.6"
+    }
+}
