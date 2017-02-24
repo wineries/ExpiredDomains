@@ -17,7 +17,17 @@ if(
 ){
     echo 'ENV:ID and ENV:NAME missing.' . "\n";
 
+    echo '$env' . "\n";
+    print_r($env);
+    echo "\n";
+
+    echo '$envExample' . "\n";
+    print_r($envExample);
+    echo "\n";
+
+    echo '$_SERVER' . "\n";
     print_r($_SERVER);
+    echo "\n";
 
     exit();
     die();
