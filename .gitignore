@@ -1,5 +1,4 @@
 env.json
-composer.lock
 
 node_modules/
 vendor/
