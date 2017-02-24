@@ -1,5 +1,13 @@
 RewriteEngine On
+RewriteBase /
 
 # Redirect Trailing Slashes If Not A Folder...
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteRule ^download/?$												download.php [L]
+RewriteRule ^download/([0-9]+)-([0-9]+)-([0-9]+).([a-z]+)/?$		    download-file.php?year=$1&month=$2&day=$3&format=$4 [L]
+
+RewriteRule ^([0-9]+)/?$		                                        year.php?year=$1 [L]
+RewriteRule ^([0-9]+)/([0-9]+)/?$		                                month.php?year=$1&month=$2 [L]
+RewriteRule ^([0-9]+)/([0-9]+)/([0-9]+)/?$		                        day.php?year=$1&month=$2&day=$3 [L]
