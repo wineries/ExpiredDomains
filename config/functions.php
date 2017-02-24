@@ -3,11 +3,12 @@
 function cacheCall($url){
     $hash = md5($url);
 
+    //error_log($hash . ' | ' . $url . ' | ' . '');
+
     if(file_exists(__DIR__ . '/../cache/' . $hash)){
         $data = file_get_contents(__DIR__ . '/../cache/' . $hash);
-        if($data == 'No data.'){
-            $data = false;
-        }
+        if($data == 'No data.'){$data = false;}
+        error_log($hash . ' | ' . $url . ' | ' . 'loading from cache');
     }else{
         $data = @file_get_contents($url);
 
@@ -17,7 +18,8 @@ function cacheCall($url){
             $data = false;
         }else{
             file_put_contents(__DIR__ . '/../cache/' . $hash, $data);
-        }        
+        }
+        error_log($hash . ' | ' . $url . ' | ' . 'saving to cache');
     }
 
     return $data;
