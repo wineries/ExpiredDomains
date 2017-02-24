@@ -4,7 +4,7 @@ if(file_exists(__DIR__ . '/../env.json')){
     $env = json_decode(file_get_contents(__DIR__ . '/../env.json'), true);
 }
 if(file_exists(__DIR__ . '/../env.example.json')){
-    $envExample = json_decode(file_get_contents(__DIR__ . '/../env.json'), true);
+    $envExample = json_decode(file_get_contents(__DIR__ . '/../env.example.json'), true);
     foreach($envExample as $name => $void){
         if((isset($_SERVER[$name])) && (!isset($env[$name]))){
             $env[$name] = $_SERVER[$name];
@@ -15,7 +15,7 @@ if(file_exists(__DIR__ . '/../env.example.json')){
 if(
     (!isset($env['ID'])) || (!isset($env['NAME']))
 ){
-    echo 'ENV:ID and ENV:NAME missing.' . "\n";
+    echo 'ENV:ID and/or ENV:NAME missing.' . "\n";
 
     echo '$env' . "\n";
     print_r($env);
