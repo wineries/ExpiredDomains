@@ -2,7 +2,6 @@ env.json
 
 node_modules/
 vendor/
-public/assets
 
 cache/*
 !cache/.cache
